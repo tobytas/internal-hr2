@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TE03_Employee_must_be_set_non_Holiday</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+	NOT(ISBLANK(TEXT(Type__c))),
+	TEXT(Type__c) != &apos;Holiday&apos;,
+	ISBLANK(Employee__c)
+)</errorConditionFormula>
+    <errorDisplayField>Employee__c</errorDisplayField>
+    <errorMessage>TE03: Employee must be set for non-Holiday Time Entry</errorMessage>
+</ValidationRule>

@@ -1,0 +1,38 @@
+<template>
+    <lightning-card>
+<!--        <lightning-record-form record-id={timeEntryId} object-api-name={sobjectName} fields={fields.fieldsArray} mode={mode} columns="2"></lightning-record-form>-->
+
+        <lightning-record-edit-form record-id={timeEntryId} object-api-name={sobjectName} onsuccess={handleSuccess}>
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field class="from" if:true={timeEntryId} field-name={fields.from} onchange={handleDateChange}></lightning-input-field>
+                    <lightning-input-field class="from" if:false={timeEntryId} field-name={fields.from} value={from} onchange={handleDateChange}></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field class="to" if:true={timeEntryId} field-name={fields.to}></lightning-input-field>
+                    <lightning-input-field class="to" if:false={timeEntryId} field-name={fields.to} value={to}></lightning-input-field>
+                </div>
+            </div>
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name={fields.type}></lightning-input-field>
+                    <lightning-input-field field-name={fields.hours}></lightning-input-field>
+                    <lightning-input-field field-name={fields.comment}></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field if:true={timeEntryId} field-name={fields.employee}></lightning-input-field>
+                    <lightning-input-field if:false={timeEntryId} field-name={fields.employee} value={employeeId}></lightning-input-field>
+                    <lightning-input-field if:true={timeEntryId} field-name={fields.location}></lightning-input-field>
+                    <lightning-input-field if:false={timeEntryId} field-name={fields.location} value={locationId}></lightning-input-field>
+<!--                    <lightning-input-field field-name={fields.status}></lightning-input-field>-->
+                </div>
+            </div>
+            <div class="slds-align_absolute-center slds-p-around_medium">
+                <lightning-button class="slds-m-around_xx-small" label="Reset" onclick={handleReset}></lightning-button>
+                <lightning-button if:true={timeEntryId} class="slds-m-around_xx-small" label="Save" type="submit" variant="brand"></lightning-button>
+                <lightning-button if:false={timeEntryId} class="slds-m-around_xx-small" label="Create" type="submit" variant="brand"></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

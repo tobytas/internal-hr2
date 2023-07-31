@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <div>
+            <svg class="legend" height=90 width=900></svg>
+        </div>
+        <div if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+
+        <div class="slds-clearfix">
+            <div class="slds-float_right slds-m-bottom_small">
+                <lightning-button-icon icon-name="utility:refresh" variant="border-filled" alternative-text="Refresh" title="Refresh" onclick={refresh}></lightning-button-icon>
+            </div>
+        </div>
+        <div class="calendar"></div>
+    </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="InconsistentSalesforceApiVersion" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredFilePaths">
+        <list>
+          <option value="$PROJECT_DIR$/force-app/main/default/triggers/EmployeeTrigger.trigger-meta.xml" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="JSUnresolvedReference" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+  </profile>
+</component>

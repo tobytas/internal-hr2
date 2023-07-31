@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-card class="slds-m-around_small">
+                <div class="slds-m-around_small">
+                    <h5 class="slds-m-bottom_xx-small slds-text-color_weak">Vacation Info (days)</h5>
+                    <span class="slds-text-body_small">Totally allocated: {vacationInfo.vacationDays}</span> <br />
+                    <span class="slds-text-body_small">Allocated to date: {vacationInfo.vacationDaysYearToDate}</span> <br />
+                    <span class="slds-text-body_small">Requested: {vacationInfo.vacationDaysRequested}</span> <br />
+                    <span class="slds-text-body_small">Already used: {vacationInfo.vacationDaysUsed}</span> <br />
+                    <span class="slds-text-body_small">Left: {vacationInfo.vacationDaysLeft}</span> <br />
+                </div>
+            </lightning-card>
+        </div>
+    </div>
+</template>

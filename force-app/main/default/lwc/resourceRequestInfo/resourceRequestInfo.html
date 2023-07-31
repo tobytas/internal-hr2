@@ -1,0 +1,113 @@
+<template>
+<!--    <lightning-card>-->
+<!--        <div class="slds-m-around_small">-->
+<!--            <table class="slds-table slds-table_cell-buffer slds-table_header-hidden">-->
+
+<!--                <tr>-->
+<!--                    <td class="abc">Employee</td>-->
+<!--                    <template for:each={weekInfo} for:item="info">-->
+<!--                        <td key={info.weekNumber}>{info.label}</td>-->
+<!--                    </template>-->
+<!--                </tr>-->
+
+<!--                <template for:each={teams} for:item="team">-->
+<!--                    <tr key={team.teamName}>-->
+<!--                        <td>{team.teamName}</td>-->
+<!--                    </tr>-->
+<!--                    <template for:each={team.employees} for:item="employee">-->
+<!--                        <tr key={employee.Id}>-->
+<!--                            <td>{employee.Name}</td>-->
+<!--                            <template for:each={employee.cellClasses} for:item="cellClass">-->
+<!--                                <td key={cellClass} class={cellClass} ondblclick={handleDblClick}></td>-->
+<!--                            </template>-->
+<!--                        </tr>-->
+<!--                    </template>-->
+<!--                </template>-->
+
+<!--                -->
+<!--                <thead>-->
+<!--                    <tr class="slds-line-height_reset">-->
+<!--                        <th class="" scope="col">-->
+<!--                            <div class="slds-truncate" title=""></div>-->
+<!--                        </th>-->
+<!--                        <template for:each={weekInfo} for:item="info">-->
+<!--                            <th key={info.weekNumber} class="" scope="col">-->
+<!--                                <div class="slds-truncate" title="">{info.label}</div>-->
+<!--                            </th>-->
+<!--                        </template>-->
+<!--                    </tr>-->
+<!--                </thead>-->
+<!--                -->
+<!--                <tbody>-->
+<!--                    <template for:each={teams} for:item="team">-->
+<!--                        <tr key={team.teamName} class="slds-hint-parent">-->
+<!--                            <th data-label="" scope="row">-->
+<!--                                <div class="slds-truncate" title="">{team.teamName}</div>-->
+<!--                            </th>-->
+<!--                        </tr>-->
+<!--                        <template for:each={team.employees} for:item="employee">-->
+<!--                            <tr key={employee.Id} class="slds-hint-parent">-->
+<!--                                <th data-label="" scope="row">-->
+<!--                                    <div class="slds-truncate" title="">{employee.Name}</div>-->
+<!--                                </th>-->
+<!--                                <template for:each={employee.cellClasses} for:item="cellClass">-->
+<!--                                    <td key={cellClass} data-label="">-->
+<!--                                        <div class={cellClass} title="" ondblclick={handleDblClick}></div>-->
+<!--                                    </td>-->
+<!--                                </template>-->
+<!--                            </tr>-->
+<!--                        </template>-->
+<!--                    </template>-->
+<!--                </tbody>-->
+<!--                -->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </lightning-card>-->
+
+    <div class="slds-m-top_small">
+        <lightning-button-icon icon-name="utility:chevronleft" size="small" variant="border-filled" alternative-text="" title="" onclick={decreasePeriod}></lightning-button-icon>
+        <lightning-button-icon icon-name="utility:chevronright" size="small" variant="border-filled" alternative-text="" title="" class="slds-m-left_xx-small" onclick={increasePeriod}></lightning-button-icon>
+        <lightning-button-icon icon-name="utility:refresh" size="small" variant="border-filled" alternative-text="Refresh" title="Refresh" class="slds-float_right" onclick={refresh}></lightning-button-icon>
+    </div>
+
+    <div if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </div>
+
+    <template for:each={teams} for:item="team">
+        <lightning-card key={key} class="slds-m-around_x-small">
+            <div class="slds-m-around_small">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="">{team.teamName}</div>
+                            </th>
+                            <template for:each={weekInfo} for:item="info">
+                                <th key={key} class="" scope="col">
+                                    <div class="slds-truncate" title="">{info.label}</div>
+                                </th>
+                            </template>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <template for:each={team.employees} for:item="employee">
+                            <tr key={key} class="slds-hint-parent">
+                                <th data-label="" scope="row">
+                                    <div class="slds-truncate" title="">{employee.Name}</div>
+                                </th>
+                                <template for:each={employee.cellClasses} for:item="cellClass">
+                                    <td key={key} data-label="">
+                                        <div class={cellClass} title="" ondblclick={handleDblClick}></div>
+                                    </td>
+                                </template>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </lightning-card>
+    </template>
+
+</template>

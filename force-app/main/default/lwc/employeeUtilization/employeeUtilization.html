@@ -1,0 +1,13 @@
+<template>
+    <lightning-card class="slds-m-around_small">
+        <lwcc-chart type="doughnut" responsive="true">
+            <lwcc-dataset labels={labels}>
+                <lwcc-data detail={detail} backgroundcolor={backgroundColor}></lwcc-data>
+            </lwcc-dataset>
+            <lwcc-title text={chartLabel}></lwcc-title>
+            <lwcc-legend position="left"></lwcc-legend>
+            <lwcc-arc-configuration bordercolor="#fff"></lwcc-arc-configuration>
+        </lwcc-chart>
+        <span if:true={utilization} class="slds-m-left_small">Overall utilization ~{utilization}%</span>
+    </lightning-card>
+</template>

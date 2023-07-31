@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-record-edit-form object-api-name="itgns__TimeEntry__c">
+                <lightning-input-field class="employee" field-name="itgns__Employee__c" onchange={handleInputChange}></lightning-input-field>
+            </lightning-record-edit-form>
+            <lightning-pill-container items={employeePills} onitemremove={handleEmployeeRemove}></lightning-pill-container>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+<!--            <lightning-combobox label="Type" placeholder="Select Type" options={typePicklistValues} onchange={handlePicklistChange} class="slds-m-around_xxx-small"></lightning-combobox>-->
+            <lightning-record-edit-form object-api-name="itgns__TimeEntry__c">
+                <lightning-input-field class="type" field-name="itgns__Type__c" onchange={handlePicklistChange}></lightning-input-field>
+            </lightning-record-edit-form>
+            <lightning-pill-container items={typePills} onitemremove={handleTypeRemove}></lightning-pill-container>
+        </div>
+    </div>
+
+<!--    <c-hr-calendar location-ids={locationIds} employee-ids={employeeIds} entry-types={entryTypes}></c-hr-calendar>-->
+</template>

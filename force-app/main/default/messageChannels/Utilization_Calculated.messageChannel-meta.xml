@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Message channel to notify notify components about Employee&apos;s utilization</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Planned working hours in month</description>
+        <fieldName>plannedWorkingHours</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Reported through Time Entries working hours</description>
+        <fieldName>reportedWorkingHours</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Working hours per week for Location</description>
+        <fieldName>weekWorkingHours</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Working hours per day for Location</description>
+        <fieldName>dayWorkingHours</fieldName>
+    </lightningMessageFields>
+    <masterLabel>Utilization Calculated</masterLabel>
+</LightningMessageChannel>

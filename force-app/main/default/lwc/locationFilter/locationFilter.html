@@ -1,0 +1,21 @@
+<template>
+    <lightning-card class="slds-m-around_small">
+        <div class="slds-grid slds-m-around_small">
+            <div class="slds-col slds-size_1-of-4">
+                <lightning-record-edit-form object-api-name="itgns__TimeEntry__c">
+                    <lightning-input-field field-name="itgns__Location__c" onchange={handleChange}></lightning-input-field>
+                </lightning-record-edit-form>
+                <lightning-pill-container items={pills} onitemremove={handleRemove}></lightning-pill-container>
+            </div>
+            <div class="slds-col slds-size_3-of-4">
+                <c-employee-filter location-ids={locationIds} onemployeeids={handleEmployeeIds} onentrytypes={handleEntryTypes}></c-employee-filter>
+            </div>
+        </div>
+    </lightning-card>
+
+    <lightning-card class="slds-m-around_small">
+        <div class="slds-m-around_small">
+            <c-hr-calendar location-ids={locationIds} employee-ids={employeeIds} entry-types={entryTypes}></c-hr-calendar>
+        </div>
+    </lightning-card>
+</template>

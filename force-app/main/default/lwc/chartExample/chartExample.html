@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <lwcc-chart type="doughnut" responsive="true">
+            <lwcc-dataset labels='["OK", "WARNING", "CRITICAL", "UNKNOWN"]'>
+                <lwcc-data label="# of Tomatoes" detail="[12, 19, 3, 5]" backgroundcolor='["#7FFFD4", "#F0FFFF", "#F5F5DC", "#A52A2A"]'></lwcc-data>
+            </lwcc-dataset>
+            <lwcc-title text="Doughnut Chart"></lwcc-title>
+            <lwcc-legend position="left"></lwcc-legend>
+            <lwcc-arc-configuration bordercolor="#008B8B"></lwcc-arc-configuration>
+        </lwcc-chart>
+    </lightning-card>
+</template>

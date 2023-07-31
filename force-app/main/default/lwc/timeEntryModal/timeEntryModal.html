@@ -1,0 +1,9 @@
+<template>
+    <lightning-modal-header label={label}></lightning-modal-header>
+    <lightning-modal-body>
+        <c-time-entry-processor time-entry-id={timeEntryId} mode={mode} from={from} to={to} employee-id={employeeId} location-id={locationId} onsuccess={handleSuccess}></c-time-entry-processor>
+    </lightning-modal-body>
+<!--    <lightning-modal-footer>-->
+<!--        <lightning-button label="OK" onclick={handleOkay}></lightning-button>-->
+<!--    </lightning-modal-footer>-->
+</template>
